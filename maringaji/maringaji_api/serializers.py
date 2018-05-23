@@ -33,3 +33,20 @@ class UserProfileSerializer(serializers.ModelSerializer):
     user.save()
 
     return user
+
+
+class ApplicationSerializer(serializers.ModelSerializer):
+  """A serializer for our Application objects."""
+
+  class Meta:
+    model = models.Applications
+    fields = (
+      'student',
+      'tutor',
+      'created_on'
+    )
+
+
+class ApplicationPostSerializer(serializers.Serializer):
+
+  tutor_id = serializers.IntegerField()

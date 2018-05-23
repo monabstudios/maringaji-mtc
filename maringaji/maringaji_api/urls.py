@@ -11,4 +11,5 @@ router.register('login', views.LoginViewSet, base_name='login')
 
 urlpatterns = [
   url(r'', include(router.urls)),
+    url(r'^application/', views.ApplicationApiView.as_view()),
 ]
